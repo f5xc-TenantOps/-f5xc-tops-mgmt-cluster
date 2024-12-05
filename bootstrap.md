@@ -43,7 +43,7 @@ kubectl apply -f argocd/argocd-app.yml
 ```shell
 export NAMESPACE=tfc-operator-system
 kubectl create namespace $NAMESPACE
-kubectl -n $NAMESPACE create secret generic terraformrc --from-file=tfc-creds.tf
+kubectl -n $NAMESPACE create secret generic terraformrc --from-file=tfc-creds
 kubectl -n $NAMESPACE apply -f aws-creds.yaml
 ```
 

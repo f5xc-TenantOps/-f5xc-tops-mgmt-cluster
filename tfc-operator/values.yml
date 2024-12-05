@@ -1,0 +1,19 @@
+global:
+  enabled: true
+  imageK8S: "hashicorp/terraform-k8s:1.1.2"
+syncWorkspace:
+  enabled: "-"
+  image: null
+  insecure: false
+  k8WatchNamespace: null
+  terraformVersion: latest
+  tfeAddress: null
+  terraformRC:
+    secretName: terraformrc
+    secretKey: tfc-creds
+  sensitiveVariables:
+    secretName: workspacesecrets
+tests:
+  enabled: true
+  organization: tf-operator
+CACerts: ""
