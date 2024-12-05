@@ -15,5 +15,5 @@ spec:
   applyMethod: auto
   terraformVariables:
     - name: test
-      value: 2
+      value: "2"
 
