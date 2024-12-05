@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd
+  namespace: argocd
+spec:
+  project: default
+  syncPolicy:
+    syncOptions:
+      - RespectIgnoreDifferences=true
+    automated:
+      prune: true
+  sources:
+    - repoURL: https://github.com/f5xc-TenantOps/f5xc-tops-mgmt-cluster.git
+      targetRevision: HEAD
+      path: argocd
+  destination:
+    name: in-cluster
+    namespace: argocd

@@ -1,2 +1,10 @@
 # f5xc-tops-mgmt-cluster
-Cluster handling infrastructure deployment and monitoring tooling for F5 XC tenant operations 
+Configuration for Cluster handling infrastructure deployment and monitoring tooling.
+
+## 🥾 Bootstrap
+This repo takes over once the cluster has a functional ArgoCD install.
+What distro you use, how you install ArgoCD, how you expose services, certificates, ingress, etc. are out of scope.
+Here's an [example](./bootstrap.md) prepping those components on using microk8s.
+
+## ♻️ App of Apps
+
