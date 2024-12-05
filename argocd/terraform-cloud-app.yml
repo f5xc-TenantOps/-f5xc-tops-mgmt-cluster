@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: terraform-cloud
+  namespace: argocd
+spec:
+  project: default
+  syncPolicy:
+    automated: 
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
+  destination:
+    name: in-cluster
+    namespace: terraform-cloud
+  sources:
+    - chart: terraform
+      repoURL: https://helm.releases.hashicorp.com
+      targetRevision: 1.0
+    - repoURL: https://github.com/kreynoldsf5/orijen-controller.git
+      targetRevision: HEAD
+      path: terraform-cloud
