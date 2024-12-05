@@ -12,9 +12,9 @@ spec:
     name: in-cluster
     namespace: tfc-operator-system
   sources:
-    - chart: terraform
+    - chart: hcp-terraform-operator
       repoURL: https://helm.releases.hashicorp.com
-      targetRevision: 1.1.2
+      targetRevision: 2.7.1
       helm:
         valueFiles:
         - $values/tfc-operator/values.yml
