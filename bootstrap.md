@@ -33,3 +33,8 @@ kc replace -f argocd-components.yaml
 ```shell
 argocd account update-password --account <new-account-name> --current-password <admin-password> --new-password <new-account-password>
 ```
+
+## Apply initial ArgoCD App
+```shell
+kubectl apply -f argocd/argocd-app.yml
+```
