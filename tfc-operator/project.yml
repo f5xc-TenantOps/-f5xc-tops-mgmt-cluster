@@ -1,0 +1,11 @@
+apiVersion: app.terraform.io/v1alpha2
+kind: Project
+metadata:
+  name: greetings-project
+spec:
+  organization: f5xc-tenant-ops
+  token:
+    secretKeyRef:
+      name: terraformrc
+      key: token
+  name: example-project
