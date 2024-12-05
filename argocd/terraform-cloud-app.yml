@@ -17,7 +17,7 @@ spec:
   sources:
     - chart: terraform
       repoURL: https://helm.releases.hashicorp.com
-      targetRevision: 1.0
+      targetRevision: 1.1.2
     - repoURL: https://github.com/kreynoldsf5/orijen-controller.git
       targetRevision: HEAD
       path: terraform-cloud
