@@ -1,1 +1,2 @@
-credentials.tf
+tfc-creds.tf
+aws-creds.yaml
