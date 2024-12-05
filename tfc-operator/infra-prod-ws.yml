@@ -1,0 +1,19 @@
+---
+apiVersion: app.terraform.io/v1alpha2
+kind: Workspace
+metadata:
+  name: tops-infra-prod
+spec:
+  organization: f5xc-tenant-ops
+  terraformVersion: 1.6.2
+  token:
+    secretKeyRef:
+      name: terraformrc
+      key: token
+  name: tops-infra-prod
+  description: F5XC Tenant Ops Infrastructure - Production
+  applyMethod: auto
+  terraformVariables:
+    - name: test
+      value: "2"
+
