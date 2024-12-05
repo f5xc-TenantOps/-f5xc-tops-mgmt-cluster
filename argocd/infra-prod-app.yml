@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: infra-dev
+  name: infra-prod
   namespace: argocd
 spec:
   project: default
@@ -14,7 +14,7 @@ spec:
   sources:
     - repoURL: https://github.com/f5xc-TenantOps/f5xc-tops-mgmt-cluster.git
       targetRevision: HEAD
-      path: infra-dev
+      path: infra-prod
   destination:
     name: in-cluster
-    namespace: infra-dev
+    namespace: infra-prod

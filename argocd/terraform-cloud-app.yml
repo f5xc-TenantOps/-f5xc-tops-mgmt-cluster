@@ -24,3 +24,6 @@ spec:
       targetRevision: HEAD
       path: tfc-operator
       ref: values
+    - chart: reflector
+      repoURL: https://emberstack.github.io/helm-charts
+      targetRevision: 7.1.288
