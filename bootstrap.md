@@ -38,3 +38,12 @@ argocd account update-password --account <new-account-name> --current-password <
 ```shell
 kubectl apply -f argocd/argocd-app.yml
 ```
+
+## Prepare the ``tfc-operator-system`` NS
+```shell
+export NAMESPACE=tfc-operator-system
+kubectl create namespace $NAMESPACE
+kubectl -n $NAMESPACE create secret generic terraformrc --from-file=credentials.tf
+kubectl -n $NAMESPACE create secret generic workspacesecrets --from-literal=secret_key=abc123
+```
+

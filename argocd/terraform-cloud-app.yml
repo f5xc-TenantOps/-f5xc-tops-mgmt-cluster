@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: terraform-cloud
+  name: terraform-cloud-app
   namespace: argocd
 spec:
   project: default
@@ -9,15 +9,18 @@ spec:
     automated: 
       prune: true
     syncOptions:
-      - CreateNamespace=true
       - ServerSideApply=true
   destination:
     name: in-cluster
-    namespace: terraform-cloud
+    namespace: tfc-operator-system
   sources:
     - chart: terraform
       repoURL: https://helm.releases.hashicorp.com
       targetRevision: 1.1.2
+      helm:
+        valueFiles:
+        - $values/tfc-operator/values.yml
     - repoURL: https://github.com/f5xc-TenantOps/f5xc-tops-mgmt-cluster.git
       targetRevision: HEAD
-      path: terraform-cloud
+      path: tfc-operator
+      ref: values
