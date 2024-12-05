@@ -1,1 +1,3 @@
 bootstrap-secrets.yml
+argocd-config.yml
+cert-manager-config.yml

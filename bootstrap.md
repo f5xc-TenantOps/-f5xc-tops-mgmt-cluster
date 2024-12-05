@@ -16,17 +16,17 @@ sudo apt-get install git
 git config --global --add safe.directory /snap/microk8s/current/addons/community/.git
 microk8s enable community
 microk8s enable cert-manager
+kubectl apply -f cert-manager-config.yml
 ```
 
-## Configure cert-manager
+## Enable/Configure Ingress 
 ```shell
-kubectl apply -f cert-manager-components.yaml
 microk8s enable ingress:default-ssl-certificate=kube-system/wildcard-k11s-io
 ```
 
 ## Configure argocd
 ```shell
-kc replace -f argocd-components.yaml 
+kc replace -f argocd-config.yml 
 ```
 
 ## Add argocd account(s)
