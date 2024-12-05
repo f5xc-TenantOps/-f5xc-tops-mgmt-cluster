@@ -1,0 +1,20 @@
+---
+apiVersion: app.terraform.io/v1alpha2
+kind: Module
+metadata:
+  name: example-module
+spec:
+  organization: f5xc-tenant-ops
+  token:
+    secretKeyRef:
+      name: terraformrc
+      key: token
+  module:
+    source: hashicorp/module/random
+    version: 1.0.0
+  workspace:
+    name: tops-infra-dev
+  variables:
+  - name: string_length
+  outputs:
+  - name: random_string
