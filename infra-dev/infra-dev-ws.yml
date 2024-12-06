@@ -16,4 +16,16 @@ spec:
   terraformVariables:
     - name: string_length
       value: "16"
+    - name: AWS_SECRET_ACCESS_KEY
+      sensitive: true
+      valueFrom:
+        secretKeyRef:
+          name: workspacesecrets
+          key: AWS_SECRET_ACCESS_KEY
+    - name: AWS_ACCESS_KEY_ID
+      sensitive: true
+      valueFrom:
+        secretKeyRef:
+          name: workspacesecrets
+          key: AWS_ACCESS_KEY_ID
 
