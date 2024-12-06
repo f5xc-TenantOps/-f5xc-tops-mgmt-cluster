@@ -24,13 +24,11 @@ kubectl apply -f cert-manager-config.yml
 microk8s enable ingress:default-ssl-certificate=kube-system/wildcard-k11s-io
 ```
 
-## Configure argocd
+## Enable/Configure argocd
 ```shell
-kc replace -f argocd-config.yml 
-```
-
-## Add argocd account(s)
-```shell
+microk8s enable argocd
+kubectl replace -f argocd-config.yml
+kubectl apply -f argocd-ingress.yml
 argocd account update-password --account <new-account-name> --current-password <admin-password> --new-password <new-account-password>
 ```
 
