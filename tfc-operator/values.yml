@@ -72,10 +72,10 @@ operator:
   tolerations: []
 
   # -- The minimum frequency at which watched resources are reconciled. Format: `5s`, `1m`, etc.
-  syncPeriod: 1h
+  syncPeriod: 2m
 
   # -- List of namespaces the controllers should watch.
-  watchedNamespaces: []
+  watchedNamespaces: [infra-dev, infra-prod]
 
   # -- The API URL of a Terraform Enterprise instance.
   tfeAddress: ""
