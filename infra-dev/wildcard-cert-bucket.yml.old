@@ -16,7 +16,7 @@ spec:
     - name: bucket_id
     - name: bucket_arn
   variables:
-    - name: bucket
+    - name: cert_bucket
       value: "f5xc-tenant-ops-certificates-dev"
     - name: acl
       value: "private"
@@ -24,3 +24,26 @@ spec:
       value: "us-west-2"
   workspace:
     name: tops-infra-dev
+
+
+apiVersion: app.terraform.io/v1alpha2
+kind: Module
+metadata:
+  name: greetings
+spec:
+  organization: ORGANIZATION_NAME
+  token:
+    secretKeyRef:
+      name: terraformrc
+      key: token
+  destroyOnDeletion: true
+  module:
+    source: "terraform-aws-modules/sqs/aws"
+    version: "4.0.1"
+  outputs:
+    - name: queue_id
+  variables:
+    - name: name
+    - name: fifo_queue
+  workspace:
+    name: greetings

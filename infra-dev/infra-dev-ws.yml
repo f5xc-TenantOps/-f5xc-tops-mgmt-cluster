@@ -16,8 +16,7 @@ spec:
   terraformVariables:
     - name: CONFIRM_DESTROY
       value: "1"
-    - name: string_length
-      value: "16"
+  environmentVariables:
     - name: AWS_SECRET_ACCESS_KEY
       sensitive: true
       valueFrom:

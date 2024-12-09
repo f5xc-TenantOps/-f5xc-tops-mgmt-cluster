@@ -16,5 +16,6 @@ spec:
     name: tops-infra-dev
   variables:
   - name: string_length
+    value: "16"
   outputs:
   - name: random_string
