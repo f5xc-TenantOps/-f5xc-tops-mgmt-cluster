@@ -29,4 +29,8 @@ spec:
         secretKeyRef:
           name: workspacesecrets
           key: AWS_ACCESS_KEY_ID
+  versionControl:
+    identifier: f5xc-TenantOps/f5xc-tops-infra
+    branch: dev
+    oAuthTokenId: ot-mshXc8tPKM35f6Ve
 
