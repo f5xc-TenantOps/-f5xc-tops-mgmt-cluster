@@ -10,7 +10,7 @@ spec:
     secretKeyRef:
       name: terraformrc
       key: token
-  name: tops-infra-dev
+  name: tops-infra-prod
   description: F5XC Tenant Ops Infrastructure - Production
   applyMethod: auto
   terraformVariables:
