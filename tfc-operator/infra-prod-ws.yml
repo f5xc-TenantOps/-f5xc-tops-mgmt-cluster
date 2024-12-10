@@ -17,6 +17,7 @@ spec:
     - name: environment
       value: prod
       hcl: false
+      sensitive: false
   environmentVariables:
     - name: AWS_SECRET_ACCESS_KEY
       sensitive: true
