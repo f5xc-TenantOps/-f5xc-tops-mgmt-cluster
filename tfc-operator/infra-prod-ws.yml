@@ -16,15 +16,18 @@ spec:
   terraformVariables:
     - name: environment
       value: prod
+      hcl: false
   environmentVariables:
     - name: AWS_SECRET_ACCESS_KEY
       sensitive: true
+      hcl: false
       valueFrom:
         secretKeyRef:
           name: workspacesecrets
           key: AWS_SECRET_ACCESS_KEY
     - name: AWS_ACCESS_KEY_ID
       sensitive: true
+      hcl: false
       valueFrom:
         secretKeyRef:
           name: workspacesecrets
