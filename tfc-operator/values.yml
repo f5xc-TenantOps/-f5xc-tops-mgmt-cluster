@@ -75,7 +75,7 @@ operator:
   syncPeriod: 2m
 
   # -- List of namespaces the controllers should watch.
-  watchedNamespaces: [infra-dev, infra-prod]
+  watchedNamespaces: [tfc-operator-system]
 
   # -- The API URL of a Terraform Enterprise instance.
   tfeAddress: ""

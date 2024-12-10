@@ -14,8 +14,8 @@ spec:
   description: F5XC Tenant Ops Infrastructure - Development
   applyMethod: auto
   terraformVariables:
-    - name: CONFIRM_DESTROY
-      value: "1"
+    - name: environment
+      value: dev
   environmentVariables:
     - name: AWS_SECRET_ACCESS_KEY
       sensitive: true
