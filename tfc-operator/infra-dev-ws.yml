@@ -18,6 +18,13 @@ spec:
       value: dev
       hcl: false
       sensitive: false
+    - name: mcn_lab_token
+      sensitive: true
+      hcl: false
+      valueFrom:
+        secretKeyRef:
+          name: tenant-tokens
+          key: mcn_lab_token
   environmentVariables:
     - name: AWS_SECRET_ACCESS_KEY
       sensitive: true
@@ -33,13 +40,6 @@ spec:
         secretKeyRef:
           name: workspacesecrets
           key: AWS_ACCESS_KEY_ID
-    - name: mcn_lab_token
-      sensitive: true
-      hcl: false
-      valueFrom:
-        secretKeyRef:
-          name: tenant-tokens
-          key: mcn_lab_token
   versionControl:
     repository: f5xc-TenantOps/f5xc-tops-infra
     branch: dev
