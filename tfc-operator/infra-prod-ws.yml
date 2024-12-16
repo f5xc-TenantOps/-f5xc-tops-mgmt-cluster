@@ -25,6 +25,20 @@ spec:
         secretKeyRef:
           name: tenant-tokens
           key: mcn_lab_token
+    - name: sec_lab_token
+      sensitive: true
+      hcl: false
+      valueFrom:
+        secretKeyRef:
+          name: tenant-tokens
+          key: sec_lab_token
+    - name: app_lab_token
+      sensitive: true
+      hcl: false
+      valueFrom:
+        secretKeyRef:
+          name: tenant-tokens
+          key: app_lab_token
   environmentVariables:
     - name: AWS_SECRET_ACCESS_KEY
       sensitive: true
