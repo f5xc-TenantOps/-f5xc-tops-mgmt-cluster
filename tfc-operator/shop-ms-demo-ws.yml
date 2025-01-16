@@ -2,7 +2,7 @@
 apiVersion: app.terraform.io/v1alpha2
 kind: Workspace
 metadata:
-  name: shop-microservices-demo-dev
+  name: shop-microservices-demo
 spec:
   organization: f5xc-tenant-ops
   terraformVersion: 1.6.2
@@ -11,13 +11,9 @@ spec:
       name: terraformrc
       key: token
   name: shop-microservices-demo
-  description: Demo Shop Microservices Infrastructure - Dev
+  description: Demo Shop Microservices Infrastructure
   applyMethod: auto
   terraformVariables:
-    - name: environment
-      value: dev
-      hcl: false
-      sensitive: false
     - name: gcp_project_id
       valueFrom:
         secretKeyRef:
