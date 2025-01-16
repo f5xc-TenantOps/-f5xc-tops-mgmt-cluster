@@ -18,6 +18,13 @@ spec:
       value: dev
       hcl: false
       sensitive: false
+    - name: gcp_project_id
+      valueFrom:
+        secretKeyRef:
+          name: workspacesecrets
+          key: GCP_PROJECT_ID
+      hcl: false
+      sensitive: true
   environmentVariables:
     - name: GCP_CREDENTIALS
       sensitive: true
