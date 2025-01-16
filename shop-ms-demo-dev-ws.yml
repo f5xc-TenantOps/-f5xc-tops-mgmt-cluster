@@ -1,0 +1,33 @@
+---
+apiVersion: app.terraform.io/v1alpha2
+kind: Workspace
+metadata:
+  name: shop-microservices-demo-dev
+spec:
+  organization: f5xc-tenant-ops
+  terraformVersion: 1.6.2
+  token:
+    secretKeyRef:
+      name: terraformrc
+      key: token
+  name: shop-microservices-demo
+  description: Demo Shop Microservices Infrastructure - Dev
+  applyMethod: auto
+  terraformVariables:
+    - name: environment
+      value: dev
+      hcl: false
+      sensitive: false
+  environmentVariables:
+    - name: GCP_CREDENTIALS
+      sensitive: true
+      hcl: false
+      valueFrom:
+        secretKeyRef:
+          name: workspacesecrets
+          key: GCP_CREDENTIALS
+  versionControl:
+    repository: f5xc-TenantOps/f5xc-tops-demo-microservices
+    branch: dev
+    oAuthTokenID: ot-mshXc8tPKM35f6Ve
+
