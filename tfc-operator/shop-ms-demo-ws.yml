@@ -21,8 +21,7 @@ spec:
           key: GCP_PROJECT_ID
       hcl: false
       sensitive: true
-  environmentVariables:
-    - name: GCP_CREDENTIALS
+    - name: gcp_credentials
       sensitive: true
       hcl: false
       valueFrom:
