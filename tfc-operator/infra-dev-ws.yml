@@ -39,6 +39,13 @@ spec:
         secretKeyRef:
           name: tenant-tokens
           key: app_lab_token
+    - name: zone_id   
+      sensitive: true
+      hcl: false
+      valueFrom:
+        secretKeyRef:
+          name: workspacesecrets
+          key: ZONE_ID
   environmentVariables:
     - name: AWS_SECRET_ACCESS_KEY
       sensitive: true
@@ -54,13 +61,6 @@ spec:
         secretKeyRef:
           name: workspacesecrets
           key: AWS_ACCESS_KEY_ID
-    - name: ZONE_ID   
-      sensitive: true
-      hcl: false
-      valueFrom:
-        secretKeyRef:
-          name: workspacesecrets
-          key: ZONE_ID
   versionControl:
     repository: f5xc-TenantOps/f5xc-tops-infra
     branch: dev
