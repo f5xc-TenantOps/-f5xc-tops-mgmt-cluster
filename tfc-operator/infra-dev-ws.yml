@@ -46,6 +46,13 @@ spec:
         secretKeyRef:
           name: workspacesecrets
           key: ZONE_ID
+    - name: acme_email   
+      sensitive: true
+      hcl: false
+      valueFrom:
+        secretKeyRef:
+          name: workspacesecrets
+          key: ACME_EMAIL
   environmentVariables:
     - name: AWS_SECRET_ACCESS_KEY
       sensitive: true
