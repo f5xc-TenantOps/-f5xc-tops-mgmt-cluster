@@ -54,6 +54,13 @@ spec:
         secretKeyRef:
           name: workspacesecrets
           key: AWS_ACCESS_KEY_ID
+    - name: ZONE_ID   
+      sensitive: true
+      hcl: false
+      valueFrom:
+        secretKeyRef:
+          name: workspacesecrets
+          key: ZONE_ID
   versionControl:
     repository: f5xc-TenantOps/f5xc-tops-infra
     branch: dev
