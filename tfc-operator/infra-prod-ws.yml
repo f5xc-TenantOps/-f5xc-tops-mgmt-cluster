@@ -15,7 +15,7 @@ spec:
   applyMethod: auto
   terraformVariables:
     - name: environment
-      value: prod
+      value: dev
       hcl: false
       sensitive: false
     - name: mcn_lab_token
@@ -39,6 +39,27 @@ spec:
         secretKeyRef:
           name: tenant-tokens
           key: app_lab_token
+    - name: zone_id   
+      sensitive: true
+      hcl: false
+      valueFrom:
+        secretKeyRef:
+          name: workspacesecrets
+          key: ZONE_ID
+    - name: acme_email   
+      sensitive: true
+      hcl: false
+      valueFrom:
+        secretKeyRef:
+          name: workspacesecrets
+          key: ACME_EMAIL
+    - name: udf_principal_org_path  
+      sensitive: true
+      hcl: false
+      valueFrom:
+        secretKeyRef:
+          name: workspacesecrets
+          key: UDF_PRINCIPAL_ORG_PATH
   environmentVariables:
     - name: AWS_SECRET_ACCESS_KEY
       sensitive: true
