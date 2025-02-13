@@ -15,7 +15,7 @@ spec:
   applyMethod: auto
   terraformVariables:
     - name: environment
-      value: dev
+      value: prod
       hcl: false
       sensitive: false
     - name: mcn_lab_token
