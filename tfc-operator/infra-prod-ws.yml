@@ -24,21 +24,21 @@ spec:
       valueFrom:
         secretKeyRef:
           name: tenant-tokens
-          key: mcn_lab_token
+          key: mcn_svc_cred
     - name: sec_lab_token
       sensitive: true
       hcl: false
       valueFrom:
         secretKeyRef:
           name: tenant-tokens
-          key: sec_lab_token
+          key: sec_svc_cred
     - name: app_lab_token
       sensitive: true
       hcl: false
       valueFrom:
         secretKeyRef:
           name: tenant-tokens
-          key: app_lab_token
+          key: app_svc_cred
     - name: zone_id   
       sensitive: true
       hcl: false
