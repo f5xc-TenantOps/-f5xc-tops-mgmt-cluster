@@ -25,6 +25,13 @@ spec:
         secretKeyRef:
           name: tenant-tokens
           key: mcn_svc_cred
+    - name: mcn_lab_token_name
+      sensitive: true
+      hcl: false
+      valueFrom:
+        secretKeyRef:
+          name: tenant-tokens
+          key: mcn_svc_cred_name
     - name: sec_lab_token
       sensitive: true
       hcl: false
@@ -32,6 +39,13 @@ spec:
         secretKeyRef:
           name: tenant-tokens
           key: sec_svc_cred
+    - name: sec_lab_token_name
+      sensitive: true
+      hcl: false
+      valueFrom:
+        secretKeyRef:
+          name: tenant-tokens
+          key: sec_svc_cred_name
     - name: app_lab_token
       sensitive: true
       hcl: false
@@ -39,6 +53,13 @@ spec:
         secretKeyRef:
           name: tenant-tokens
           key: app_svc_cred
+    - name: app_lab_token_name
+      sensitive: true
+      hcl: false
+      valueFrom:
+        secretKeyRef:
+          name: tenant-tokens
+          key: app_svc_cred_name
     - name: zone_id   
       sensitive: true
       hcl: false
